@@ -1,0 +1,119 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+      "title": "Face Or Fiction - API 1.0.1",
+      "description": "Welcome to the API documentation for our \"Face or Fiction\" image analysis API developed by Imagne Coders. This API is designed to help users quickly and easily determine whether an image is real or fake and, if real, predict the gender of the person in the image. Here is some information to help you get started:\n\nSome useful links:\n- [The source API Testing Website](https://github.com)",
+      "termsOfService": "https://www.gmail.com/",
+      "contact": {
+        "email": "ImagineCoders@gmail.com"
+      },
+      "version": "1.0.1"
+    },
+    "servers": [
+      {
+        "url": "http://api-endpoint.com/predict_gender"
+      }
+    ],
+    "tags": [
+      {
+        "name": "Predict",
+        "description": "Face or Fiction Prediction"
+      }
+    ],
+    "paths": {
+      "/url": {
+        "post": {
+          "tags": [
+            "Predict"
+          ],
+          "summary": "Using URL of an Image",
+          "description": "This can only be done via providing url of an image",
+          "operationId": "predictImageURL",
+          "requestBody": {
+            "description": "Predicted Image using URL",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/URL"
+                }
+              }
+            }
+          },
+          "responses": {
+            "default": {
+              "description": "successful operation",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/URL"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/image": {
+        "post": {
+          "tags": [
+            "Predict"
+          ],
+          "summary": "Using Image File",
+          "description": "This can only be done via uploading file in format jpg/jpeg/png",
+          "operationId": "predictImage",
+          "requestBody": {
+            "description": "Predicted Image using file",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/File"
+                }
+              }
+            }
+          },
+          "responses": {
+            "default": {
+              "description": "successful operation",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/File"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "File": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "path",
+              "example": "image.jpg"
+            }
+          },
+          "xml": {
+            "name": "File"
+          }
+        },
+        "URL": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "url",
+              "example": "https://www.image.com/img-45"
+            }
+          },
+          "xml": {
+            "name": "URL"
+          }
+        }
+      }
+    }
+  }
