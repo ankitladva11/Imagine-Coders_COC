@@ -1,6 +1,6 @@
 # Imagine-Coders_COC
 Project Title: Fake Profile Detection using Customized Face Detection Model
-
+![ Intro ](real_fake.jpg)
 ## Overview:
 This project is aimed at developing an API that can detect fake profiles by identifying if the profile picture is an actual face or a cartoon/distorted image. Additionally, the API will also be able to detect the gender of the person in the image. The project will be built upon a customized face detection model using open source tools and existing models to ensure accuracy and efficiency. The API will have a simple interface and a minimal response time, making it easy to use and implement in various applications.
 
